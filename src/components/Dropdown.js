@@ -24,7 +24,7 @@ export default function Dropdown(props) {
         <p className="c-dropdown__status--conf">{labelEndereco}</p>
       </div>
       <div className="c-dropdown__arrowdown" role="button" onClick={() => clicado(!open)}>
-        <img src={KeyDown} />
+        <img src={KeyDown} alt="down" />
       </div>
       {open && (
         <ul className="c-dropdown__list">
