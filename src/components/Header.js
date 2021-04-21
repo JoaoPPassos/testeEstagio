@@ -27,9 +27,6 @@ export default function Header(props) {
         <img src={Cart} alt="cart" />
         <p className="c-header__cart--text">Carrinho</p>
       </div>
-      <div className="c-header__quantidade">
-        <p>1</p>
-      </div>
     </header >
   );
 }

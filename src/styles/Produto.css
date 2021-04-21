@@ -1,4 +1,74 @@
 .background {
   height: 100vh;
   width: 100vw;
+  overflow-x: hidden;
+}
+
+.p-produto {
+  display: flex;
+  margin-top: 24px;
+  height: 66em;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.p-produto__oferta {
+  display: flex;
+  width: 60em;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.p-produto__oferta h1 {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 100%;
+  /* or 28px */
+
+  display: flex;
+  align-items: center;
+
+  /* Gray darker */
+
+  color: #4E4E4E;
+}
+
+.p-produto__descricao {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 120%;
+
+  color: #4E4E4E;
+}
+
+.p-produto__precos {
+  display: flex;
+  flex-direction: row;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 32px;
+  line-height: 120%;
+}
+
+.p-produto__precoAtual {
+  color: #DC6E05;
+  margin-right: 10px;
+}
+
+.p-produto__disconto {
+  text-decoration-line: line-through;
+}
+
+.p-produto__adicionais {
+  display: flex;
+  width: 43.9em;
+  flex-direction: column;
+  border: 2px solid black;
+  border-radius: 8px;
 }
