@@ -1,0 +1,32 @@
+.c-input {
+  width: 35.4em;
+  height: 5em;
+  background-color: white;
+  position: relative;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: 1px solid #ED3237;
+}
+
+.c-input__entrada {
+  width: 80%;
+  height: 90%;
+  border: 0;
+  border-radius: 4px;
+  margin-left: 3px;
+  outline: none;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 10px;
+  color: #656363;
+}
+
+.c-input__icon {
+  position: absolute;
+  z-index: 1;
+  right: 20px;
+}
