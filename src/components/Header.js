@@ -7,7 +7,11 @@ import Account from '../images/account.png';
 import Cart from '../images/cart.png';
 import "../styles/Header.css";
 
+import { useAuth } from '../provider/auth';
+
 export default function Header(props) {
+  const appContext = useAuth();
+
   return (
     <header className="c-header">
       <div className="c-header__logoArea">
@@ -25,7 +29,41 @@ export default function Header(props) {
 
       <div className="c-header__cart">
         <img src={Cart} alt="cart" />
+        <div className="c-header__cartIndicator">
+          <p>
+            {appContext.qtPedidos}
+          </p>
+        </div>
         <p className="c-header__cart--text">Carrinho</p>
+        <div className="c-header__confirmacaoAdicao">
+          <div className="c-header__indicador"></div>
+          <div className="c-header__titleConfirmacao">
+            <p>
+              Adicionado com Sucesso
+            </p>
+          </div>
+          <div className="c-header__produtoConfirmado">
+            <div className="c-header__nomeProduto">
+              <p>
+                nome produto
+              </p>
+            </div>
+            <p className="c-header__ingredientesTitle">
+              Ingredientes:
+            </p>
+            <div className="c-header__ingredientes">
+              <li>
+                produto1
+              </li>
+              <li>
+                produto2
+              </li>
+              <li>
+                produto3
+              </li>
+            </div>
+          </div>
+        </div>
       </div>
     </header >
   );

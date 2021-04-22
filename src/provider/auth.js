@@ -7,12 +7,13 @@ export function AuthProvider(props) {
     { id: 1, endereco: "R. Antônio Braune, 222" }, { id: 2, endereco: "R. Antônio Braune, 273" }
   ]);
   const [infos, setInfos] = useState(null);
-  const [qtIngredientes, setQtIngredientes] = useState(0);
-  const [qtProduto, setQtProduto] = useState(0);
-
+  const [ingredientes, setIngredientes] = useState([]);
+  const [pedido, setPedido] = useState(null);
+  const [contadorIngredientes, setContadorIngredientes] = useState(0);
+  const [contadorPedido, setContadorPedido] = useState(0);
 
   return (
-    <AuthContext.Provider value={{ enderecos, setEnderecos, infos, setInfos, qtIngredientes, setQtIngredientes, setQtProduto, qtProduto }}>
+    <AuthContext.Provider value={{ enderecos, setEnderecos, infos, setInfos, ingredientes, setIngredientes, contadorIngredientes, setContadorIngredientes, pedido, setPedido, contadorPedido, setContadorPedido }}>
       {props.children}
     </AuthContext.Provider>
   );
