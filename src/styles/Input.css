@@ -10,6 +10,32 @@
   border: 1px solid #ED3237;
 }
 
+@media(max-width: 1200px) {
+  .c-input {
+    width: 32em;
+  }
+
+  .c-input__entrada {
+    font-size: 12px;
+  }
+}
+
+@media(max-width: 1024px) {
+  .c-input {
+    width: 24em;
+  }
+
+  .c-input__entrada::placeholder {
+    color: transparent;
+  }
+}
+
+@media(max-width: 768px) {
+  .c-input {
+    display: none;
+  }
+}
+
 .c-input__entrada {
   width: 80%;
   height: 90%;
@@ -20,7 +46,6 @@
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
-  font-size: 14px;
   line-height: 10px;
   color: #656363;
 }

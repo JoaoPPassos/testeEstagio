@@ -8,6 +8,7 @@ import { useAuth } from '../provider/auth';
 export default function Produto() {
   const appContext = useAuth();
   const [comTalher, setComTalher] = useState(false);
+  const [temProduto, setTemProduto] = useState(true);
 
   useEffect(() => {
     fetch("https://6077803e1ed0ae0017d6aea4.mockapi.io/test-frontend/products", {})
@@ -39,6 +40,22 @@ export default function Produto() {
 
   }, [appContext.infos])
 
+  const adicionarAoCarrinho = (ingredientes, pedido) => {
+    let arrayIngrediente = ingredientes;
+    let pedidoConfirmado = pedido[0];
+
+    if (pedidoConfirmado.qt > 0) {
+      appContext.setDetalhesProduto(pedidoConfirmado)
+      appContext.setDetalhesIngredientes(arrayIngrediente)
+      appContext.setQtPedidos(appContext.qtPedidos + pedidoConfirmado.qt)
+
+      setTemProduto(true);
+
+    } else {
+      setTemProduto(false);
+    }
+  }
+
   return (
     <div className="background">
       <Header enderecos={appContext.enderecos} />
@@ -55,10 +72,10 @@ export default function Produto() {
 
             <div className="p-produto__precos">
               <p className="p-produto__precoAtual">
-                R$ {appContext.pedido[0].valor}
+                R$ {appContext.pedido[0].valor_disconto}
               </p>
               <p className="p-produto__disconto">
-                R$ {appContext.pedido[0].valor_disconto}
+                R$ {appContext.pedido[0].valor}
               </p>
             </div>
           </div>
@@ -111,7 +128,7 @@ export default function Produto() {
                 contador={[appContext.contadorPedido, appContext.setContadorPedido]}
                 chave={1}
               />
-              <button className="p-produto__button" onClick={() => appContext.setQtPedidos(appContext.qtPedidos + appContext.qtProduto)}>
+              <button className="p-produto__button" onClick={() => adicionarAoCarrinho(appContext.ingredientes, appContext.pedido)}>
                 <p>
                   Adicionar
                 </p>
@@ -120,6 +137,16 @@ export default function Produto() {
           </div>
         </main>
       }
+
+      {!temProduto ?
+        <div className="p-produto__notificacao">
+          <p>
+            Precisa adicionar um produto
+          </p>
+        </div>
+        : null
+      }
+
     </div>
   );
 }

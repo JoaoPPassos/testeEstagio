@@ -38,6 +38,42 @@
   align-items: center;
 }
 
+@media(max-width: 1200px) {
+
+  .c-header__cart,
+  .c-header__account {
+    width: 7em;
+  }
+}
+
+@media(max-width: 1024px) {
+  .c-header__account {
+    display: none;
+  }
+
+  .c-header__cart {
+    width: 6em;
+  }
+}
+
+@media(max-width: 768px) {
+  .c-header__cart {
+    display: none;
+  }
+
+  .c-header__back {
+    opacity: 1 !important;
+  }
+}
+
+.c-header__back {
+  position: absolute;
+  top: 40px;
+  left: 20px;
+  transform: rotateZ(90deg);
+  opacity: 0;
+}
+
 .c-header__cart {
   position: relative;
   right: 15px;

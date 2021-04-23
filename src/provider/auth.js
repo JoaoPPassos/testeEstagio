@@ -11,9 +11,12 @@ export function AuthProvider(props) {
   const [pedido, setPedido] = useState(null);
   const [contadorIngredientes, setContadorIngredientes] = useState(0);
   const [contadorPedido, setContadorPedido] = useState(0);
+  const [detalhesProduto, setDetalhesProduto] = useState(null);
+  const [detalhesIngredientes, setDetalhesIngredientes] = useState(null);
+  const [qtPedidos, setQtPedidos] = useState(0)
 
   return (
-    <AuthContext.Provider value={{ enderecos, setEnderecos, infos, setInfos, ingredientes, setIngredientes, contadorIngredientes, setContadorIngredientes, pedido, setPedido, contadorPedido, setContadorPedido }}>
+    <AuthContext.Provider value={{ qtPedidos, setQtPedidos, enderecos, setEnderecos, infos, setInfos, ingredientes, setIngredientes, contadorIngredientes, setContadorIngredientes, pedido, setPedido, contadorPedido, setContadorPedido, detalhesProduto, setDetalhesProduto, detalhesIngredientes, setDetalhesIngredientes }}>
       {props.children}
     </AuthContext.Provider>
   );

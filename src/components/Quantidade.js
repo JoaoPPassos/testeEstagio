@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Adicionar from '../images/Adicionar.png'
 import Subtrair from '../images/Subtrair.png'
-import { useAuth } from '../provider/auth';
 
 import "../styles/Quantidade.css";
 
